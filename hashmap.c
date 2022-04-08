@@ -84,8 +84,10 @@ Pair * searchMap(HashMap * map,  char * key) {
     long posicion = hash(key,map->capacity);
     while(is_equal(key, aux[posicion]) == 0){
         posicion++;
-        if(posicion == map -> capacity) posicion = 0;
-        if(aux[posicion] -> key == NULL) return NULL;
+        if(posicion == map -> capacity) 
+          posicion = 0;
+        if(aux[posicion] == NULL) 
+          return NULL;
     }
     map -> current = posicion;
     if(is_equal(key,aux[posicion]) == 1) 
