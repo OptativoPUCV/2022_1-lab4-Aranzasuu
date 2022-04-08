@@ -97,3 +97,9 @@ Fri Apr  8 16:02:20 UTC 2022:
  tests:  2|5
 total_score: 20/70
 d1c1abd
+Fri Apr  8 16:02:35 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  5|4
+total_score: 30/70
+0c52683
