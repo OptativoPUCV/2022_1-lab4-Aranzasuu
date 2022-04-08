@@ -81,11 +81,15 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * searchMap(HashMap * map,  char * key) {   
     Pair **aux = map -> buckets;
-    for(int i = 0; i > map -> capacity; i++){
-        if(is_equal(key,aux[i] -> key) == 1)
-            return aux[i] -> key;
+    long posicion = hash(key,map->capacity);
+    while(is_equal(key, aux[posicion]) == 0){
+        posicion++;
+        if(posicion ==  map -> capacity) break;
     }
-    return NULL;
+    if(is_equal(key,aux[posicion]) == 1) 
+      return aux[posicion] -> key;
+    else
+      return NULL;
 }
 
 Pair * firstMap(HashMap * map) {

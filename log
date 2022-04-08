@@ -125,3 +125,14 @@ hashmap.c:86:27: error: return from incompatible pointer type [-Werror=incompati
 cc1: all warnings being treated as errors
 Compilation failed
 ea9f0fa
+Fri Apr  8 16:10:47 UTC 2022: 
+ hashmap.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:90:28: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+       return aux[posicion] -> key;
+              ~~~~~~~~~~~~~~^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+653450e
