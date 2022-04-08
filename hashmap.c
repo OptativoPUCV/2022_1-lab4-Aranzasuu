@@ -7,7 +7,7 @@
 
 
 typedef struct HashMap HashMap;
-int enlarge_called=0;
+int enlarge_called = 0;
 
 struct HashMap {
     Pair ** buckets;
@@ -27,20 +27,20 @@ long hash( char * key, long capacity) {
     unsigned long hash = 0;
      char * ptr;
     for (ptr = key; *ptr != '\0'; ptr++) {
-        hash += hash*32 + tolower(*ptr);
+        hash += hash * 32 + tolower(*ptr);
     }
-    return hash%capacity;
+    return (hash % capacity);
 }
 
 int is_equal(void* key1, void* key2){
-    if(key1==NULL || key2==NULL) return 0;
-    if(strcmp((char*)key1,(char*)key2) == 0) return 1;
+    if(key1 == NULL || key2 == NULL) return 0;
+    if(strcmp((char*) key1, (char*) key2) == 0) return 1;
     return 0;
 }
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-
+    
 
 }
 
@@ -52,8 +52,15 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
-
-    return NULL;
+    HashMap *Mapa = (HashMap *)malloc(sizeof(HashMap));
+    Mapa -> buckets = (Pair **)malloc(sizeof(Pair *) * capacity);
+    Mapa -> size = 0;
+    Mapa -> capacity = capacity;
+    Mapa -> current = -1;
+    for(int i = 0; i < capacity; i++){
+        Mapa -> buckets[i] = NULL;
+    }
+    return Mapa;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
