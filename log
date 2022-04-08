@@ -19,3 +19,18 @@ hashmap.c:74:18: error: return from incompatible pointer type [-Werror=incompati
 cc1: all warnings being treated as errors
 Compilation failed
 9ebf888
+Fri Apr  8 15:39:52 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:73:26: error: ‘HashMap {aka struct HashMap}’ has no member named ‘bucket’; did you mean ‘buckets’?
+         if(is_equal(map->bucket[i],key) == 1)
+                          ^~~~~~
+                          buckets
+hashmap.c:74:33: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+           return map->buckets[i]->key;
+                  ~~~~~~~~~~~~~~~^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+260d624
