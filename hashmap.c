@@ -89,9 +89,10 @@ Pair * searchMap(HashMap * map,  char * key) {
         if(aux[posicion] == NULL) 
           return NULL;
     }
-    map -> current = posicion;
-    if(is_equal(key,aux[posicion]) == 1) 
+    if(is_equal(key,aux[posicion]) == 1){
+      map -> current = posicion;
       return aux[posicion];
+    }
     return NULL;
 }
 
