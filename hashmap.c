@@ -46,6 +46,8 @@ void insertMap(HashMap * map, char * key, void * value) {
     long posicion = map -> current;
     while(aux[posicion] != NULL){
         posicion++;
+        if(posicion == (map ->capacity) - 1)
+            posicion = 0;
     }
     map -> buckets[posicion] = dato;
     map -> current = posicion;
