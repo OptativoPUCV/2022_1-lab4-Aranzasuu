@@ -89,7 +89,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     }
     map -> current = posicion;
     if(is_equal(key,aux[posicion]) == 1) 
-      return aux[posicion] -> key;
+      return aux[posicion];
     return NULL;
 }
 
