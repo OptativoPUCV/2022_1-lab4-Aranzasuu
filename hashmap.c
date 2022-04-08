@@ -64,12 +64,15 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
+    
 
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-
+    for(int i = 0; i < map -> capacity; i++){
+        if(is_equal(map->bucket[i],key) == 1)
+          return key;
+    }
 
     return NULL;
 }

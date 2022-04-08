@@ -4,3 +4,18 @@ Fri Apr  8 15:33:20 UTC 2022:
  tests:  1|5
 total_score: 10/70
 9b9ca7b
+Fri Apr  8 15:39:23 UTC 2022: 
+ hashmap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:73:26: error: ‘HashMap {aka struct HashMap}’ has no member named ‘bucket’; did you mean ‘buckets’?
+         if(is_equal(map->bucket[i],key) == 1)
+                          ^~~~~~
+                          buckets
+hashmap.c:74:18: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+           return key;
+                  ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+9ebf888
