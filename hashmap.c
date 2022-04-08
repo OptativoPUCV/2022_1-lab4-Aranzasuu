@@ -49,6 +49,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     map -> buckets[posicion] = dato;
     map -> current = posicion;
+    map -> size++;
 }
     
 
