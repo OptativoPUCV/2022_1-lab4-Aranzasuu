@@ -87,14 +87,11 @@ Pair * searchMap(HashMap * map,  char * key) {
         posicion++;
         if(posicion == map -> capacity) 
           posicion = 0;
-        if(aux[posicion] == NULL) 
+        if((aux[posicion] == NULL) || (aux[posicion] -> key = NULL)) 
           return NULL;
     }
     map -> current = posicion;
-    if(is_equal(key,aux[posicion]) == 1){
-      return aux[posicion];
-    }
-    return NULL;
+    return map->buckets[posicion];
 }
 
 Pair * firstMap(HashMap * map) {

@@ -193,3 +193,9 @@ Sat Apr  9 17:26:47 UTC 2022:
  tests:  5|4
 total_score: 30/70
 ca22ffe
+Sat Apr  9 17:33:10 UTC 2022: 
+ hashmap.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+ tests:  5|4
+total_score: 30/70
+e65eca8
