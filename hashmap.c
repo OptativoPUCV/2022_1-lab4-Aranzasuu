@@ -75,7 +75,7 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-    long posicion = hash(key,map->capacity);
+    //long posicion = hash(key,map->capacity);
     
 
 }
