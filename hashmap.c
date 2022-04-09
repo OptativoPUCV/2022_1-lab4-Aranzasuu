@@ -81,13 +81,14 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-    Pair **aux = map -> buckets;
     long posicion = hash(key,map->capacity);
-    while(is_equal(key, aux[posicion]) == 0){
+    if (map -> buckets[posicion] == NULL)
+        return NULL;
+    while(is_equal(key, map -> buckets[posicion]) != 1){
         posicion++;
         if(posicion == map -> capacity) 
           posicion = 0;
-        if((aux[posicion] == NULL) || (aux[posicion] -> key = NULL)) 
+        if((map -> buckets[posicion] == NULL) || (map -> buckets[posicion] -> key = NULL)) 
           return NULL;
     }
     map -> current = posicion;
