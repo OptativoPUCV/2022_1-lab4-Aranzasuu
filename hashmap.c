@@ -63,8 +63,7 @@ void enlarge(HashMap * map) {
     map -> size = 0;
     map -> buckets = (Pair **) malloc(sizeof(Pair *) * map -> capacity);
 
-    if(map -> buckets != NULL){
-      for(int i = 0; i < map->capacity; i++){
+    for(int i = 0; i < map->capacity; i++){
       if(antiguo[i] != NULL){
         insertMap(map, antiguo[i]->key, antiguo[i]->value);
         (map->size)++;
